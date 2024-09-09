@@ -1,77 +1,192 @@
-body {
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background: #f4f4f4;
 }
 
-header {
-    background: #333;
+html {
+    scroll-behavior: smooth;
+}
+
+/* MENU */
+.contenedor-header {
+    background: #1e2326;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.contenedor-header header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.contenedor-header header .logo a {
+    font-family: 'Righteous', cursive;
+    font-size: 36px;
+    color: #1CB698;
+    text-decoration: none;
+}
+
+.contenedor-header header ul {
+    display: flex;
+    list-style: none;
+}
+
+.contenedor-header header nav ul li a {
+    text-align: center;
     color: #fff;
-    padding: 20px;
+    margin: 0 15px;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.contenedor-header header nav ul li a:hover {
+    background-color: #1CB698;
+    color: #fff;
+}
+
+/* INICIO */
+.inicio {
+    background: url('img/banner.jpg') no-repeat center center/cover;
+    padding: 80px 20px 60px;
+    color: #fff;
     text-align: center;
 }
 
-nav {
-    background: #444;
+.inicio h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 48px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
+.inicio p {
+    font-size: 16px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 10px;
+/* SECCIONES */
+.sobremi {
+    padding: 40px 20px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: inline-block;
-}
-
-nav ul li a:hover {
-    background: #555;
-}
-
-section {
-    padding: 20px;
-    margin: 20px;
-    background: #fff;
-    border-radius: 8px;
+.contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
 }
 
 h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
+    font-family: 'Righteous', cursive;
+    font-size: 36px;
+    color: #1CB698;
     margin-bottom: 20px;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-.edu-item, .exp-item, .skill-item {
-    margin-bottom: 20px;
-}
-
-.edu-item h3, .exp-item h3, .skill-item h3 {
+h3 {
+    font-size: 22px;
     color: #333;
+    margin-bottom: 10px;
 }
 
 ul {
-    list-style: disc;
+    list-style-type: disc;
     margin-left: 20px;
+    color: #333;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* HABILIDADES */
+.skills .fila {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills .col {
+    flex: 1;
+    padding: 10px;
+    min-width: 300px;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills ul li {
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(20px); /* Empieza desplazado hacia abajo */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animación de transición */
+}
+
+.skills ul li.visible {
+    opacity: 1; /* Visible */
+    transform: translateY(0); /* En su posición original */
+}
+
+/* Puedes ajustar la transición para que se adapte a tus preferencias */
+.skills ul li {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
+/* CONTACTO */
+#contacto form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+#contacto form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+#contacto form input, 
+#contacto form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#contacto form button {
+    background-color: #1CB698;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contacto form button:hover {
+    background-color: #169e80;
+}
+
+/* FOOTER */
+footer {
+    background: #1e2326;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
