@@ -1,18 +1,4 @@
-<!-- Dentro de tu sección de contacto -->
-<form id="contactForm" action="https://formspree.io/f/xkgweevv" method="POST">
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name" required>
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    
-    <label for="message">Mensaje:</label>
-    <textarea id="message" name="message" required></textarea>
-    
-    <button type="submit">Enviar</button>
-</form>
-
-<script>
+// Enviar el formulario de contacto
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -36,4 +22,33 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         alert('Hubo un problema al enviar el formulario.');
     });
 });
-</script>
+
+// Animación de la barra de habilidades
+function efectoHabilidades() {
+    var skillsSection = document.querySelector('.skills');
+    var skillsSectionTop = skillsSection.getBoundingClientRect().top;
+    var windowHeight = window.innerHeight;
+
+    if (skillsSectionTop < windowHeight * 0.8) {
+        var bars = document.querySelectorAll('.skills .col ul');
+
+        bars.forEach(function(bar) {
+            var listItems = bar.querySelectorAll('li');
+            listItems.forEach(function(item, index) {
+                setTimeout(function() {
+                    item.classList.add('visible');
+                }, index * 200); // Añadir un retraso para cada ítem
+            });
+        });
+    }
+}
+
+// Detectar el scrolling para aplicar la animación de la barra de habilidades
+window.addEventListener('scroll', function() {
+    efectoHabilidades();
+});
+
+// Ejecutar al cargar la página para asegurarse de que las habilidades se muestran si ya están en vista
+window.addEventListener('load', function() {
+    efectoHabilidades();
+});
